@@ -1,0 +1,197 @@
+.product-browser {
+    margin: 2rem 1rem 0 4rem;
+
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    grid-template-areas: "filters products";
+    column-gap: 1rem;
+}
+
+/* Filters */
+#filters-container {
+    grid-area: filters;
+    position: sticky;
+    top: 1rem;
+
+    height: 3rem;
+}
+
+.filters {
+    padding: 1rem;
+
+    background-color: white;
+    border-radius: 1rem;
+    border: 0.2rem solid lightgray;
+    height: fit-content;
+}
+
+/*  Dropdown button (invisible on desktop size) */
+#filters-container .dropdown-button {
+    display: none;
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 100%;
+    padding: 0.2rem 1rem;
+
+    font-size: 1rem;
+
+    border-bottom: 0.2rem solid lightgray;
+    border-top: none;
+    border-inline: none;
+
+    transition: left 0.5s ease;
+}
+
+#filters-container .dropdown-button:hover {
+    cursor: pointer;
+}
+
+#filters-container .dropdown-button .arrow {
+    rotate: -90deg;
+}
+    
+/* Product list */
+.product-list {
+    grid-area: products;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Product listings */
+.product-list .listing {
+    flex-basis: 16rem;
+    height: 28rem;
+    background-color: lightblue;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-list .listing img.photo {
+    width: 100%;
+    height: 17rem;
+    object-fit: cover;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+}
+
+.product-list .listing .info {
+    display: flex;
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: center;
+}
+
+button.buy {
+    height: 2rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: lightskyblue;
+    color: black;
+    transition: background-color 100ms ease;
+}
+
+button.buy.sold-out {
+    background-color: lightcoral;
+}
+
+button.buy:not(.sold-out):hover {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.tags .tag {
+    box-sizing: content-box;
+    display: inline-flex;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: gray;
+    height: 16px;
+    font-size: 0;
+    padding: 2px 4px;
+    margin: 0.1rem;
+
+    align-items: center;
+
+    font-size: 10px;
+}
+
+.tags .tag img {
+    height: 90%;
+    margin-right: 0.1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    /* Downsize the filters if the screen gets too small */
+    .product-browser {
+        grid-template-columns: 15rem 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /* Change to single column layout */
+    .product-browser {        
+        margin: 0;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
+    .product-list, #filters-container {
+        grid-column: 1;
+    }
+
+    .product-list .listing {
+        flex-grow: 1;
+    }
+
+    /* Hide filters and pop them out when "expanded" class is set */
+    #filters-container {
+        top: 0;
+    }
+    
+    .filters {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 100%;
+        height: 100vh;
+
+        border-radius: 0;
+        border: none;
+
+        z-index: 10;
+        overflow-x: hidden;
+
+        transition: right 0.5s ease,
+                    padding 0.5s ease;
+    }
+
+    :not(.expanded) > .filters {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .expanded .filters {
+        right: 50%;
+    }
+
+    #filters-container .dropdown-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #filters-container.expanded .dropdown-button {
+        left: 50%;
+    }
+}

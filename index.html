@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppie</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/product-browser.css">
+</head>
+<body>
+    <div id="background"></div>
+    <header>
+        <div class="left">
+            <h1 class="brand"><a href="index.html">Shoppie</a></h1>
+        </div>
+        <form class="search" id="search-form" autocomplete="off" action="" method="get">
+            <input type="text" name="q" id="search-input" placeholder="Search for products...">
+            <button class="icon" type="submit">
+                <img src="icons/iconmonstr-magnifier-lined.svg" alt="magnifier">
+            </button>
+        </form>
+        <div class="right">
+            <!-- Cart -->
+            <a class="cart icon" href="#">
+                <img src="icons/iconmonstr-shopping-cart-2.svg" alt="Cart">
+                <div class="cart-count">99+</div>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="product-browser">
+            <div id="filters-container">
+                <button onclick="toggleFilterDropdown()" class="dropdown-button">
+                    <span>Filters</span>
+                    <img class="arrow" src="icons/iconmonstr-angel-down-thin.svg" alt="arrow">
+                </button>
+                <div class="filters">
+                    <p>Product filters will go here</p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, blanditiis?</p>
+                    <br>
+                    <p>Est quibusdam iure totam doloremque! Vero veniam quod ipsum eveniet.</p>
+                    <br>
+                    <p>Quasi consequuntur placeat vero inventore tenetur natus, culpa repellat voluptatibus.</p>
+                    <br>
+                    <p>Sapiente amet natus, necessitatibus dolor cum quaerat excepturi nostrum consequuntur?</p>
+                    <br>
+                    <p>Ducimus illum dolorum esse provident fugiat, nesciunt sequi ipsa est!</p>
+                </div>
+            </div>
+            <div class="product-list">
+                <div class="listing">
+                    <div class="top">
+                        <img class="photo" src="content/images/Camera.jpg" alt="Blue Shoe">
+                        <div class="info">
+                            <h2>Polaroid Classic Camera</h2>
+                            <h4>$29.99</h4>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="tags">
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Electronics</span></div>
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Photo</span></div>
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Vintage</span></div>
+                        </div>
+                        <button class="buy">Buy</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="top">
+                        <img class="photo" src="content/images/Blue Shoe.jpg" alt="Blue Shoe">
+                        <div class="info">
+                            <h2>Bloo Shoo</h2>
+                            <h4>$23.49</h4>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="tags">
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Clothes</span></div>
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Shoes</span></div>
+                        </div>
+                        <button class="buy">Buy</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="top">
+                        <img class="photo" src="content/images/Glasses.jpg" alt="Blue Shoe">
+                        <div class="info">
+                            <h2>Cool Shades 😎</h2>
+                            <h4>$15.99</h4>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="tags">
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Accessories</span></div>
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Headwear</span></div>
+                        </div>
+                        <button class="buy">Buy</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="top">
+                        <img class="photo" src="content/images/Headphones.jpg" alt="Blue Shoe">
+                        <div class="info">
+                            <h2>Pineapple EarPads</h2>
+                            <h4>$105.00</h4>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="tags">
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Electronics</span></div>
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Audio</span></div>
+                        </div>
+                        <button class="buy">Buy</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="top">
+                        <img class="photo" src="content/images/Frog.jpg" alt="Blue Shoe">
+                        <div class="info">
+                            <h2>Just a Frog</h2>
+                            <h4>$999.99</h4>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="tags">
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Frog</span></div>
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Nothing Else</span></div>
+                        </div>
+                        <button class="buy sold-out" disabled>Sold out</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="top">
+                        <img class="photo" src="content/images/Red Shoe.jpg" alt="Blue Shoe">
+                        <div class="info">
+                            <h2>§̷̡̨̥̹͚̬͉̖̯͖͈̲̀̿̄̈́͂̔͐͐́̇̈́̉h̸̢̨̛̛͎͖͚͎͕̹̯͈̍̔̓̇̀̍̊͒̈̈ͅͅð̷̢̛̱̰̘̫͚͍̜̠͍̝̊̐͊́̏͌̀̈́̈̒͝ę̴̨̰͈̟̦͕͉̩̙̻͖̂̅̐̃̌̾̈͛̈́́͐̔§̸̞̭͍͕͈͖̮̠̠̘̖͐͛̉̎̑͆̾̔̀̈̓͘ͅ</h2>
+                            <h4>Your soul</h4>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="tags">
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>666</span></div>
+                        </div>
+                        <button class="buy">Buy</button>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="top">
+                        <img class="photo" src="content/images/Watch.jpg" alt="Blue Shoe">
+                        <div class="info">
+                            <h2>Tick Tock, it's watch o'clock</h2>
+                            <h4>$149.99</h4>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="tags">
+                            <div class="tag"><img src="icons/iconmonstr-tag-2.svg" alt="tag"><span>Electronics</span></div>
+                        </div>
+                        <button class="buy">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/filters.js"></script>
+</body>
+</html>
